@@ -12,6 +12,7 @@ export interface RoundProgressDefaults {
   clockwise?: boolean;
   semicircle?: boolean;
   rounded?: boolean;
+  ifOnly?:boolean;
 }
 
 @Injectable()
@@ -27,7 +28,8 @@ export class RoundProgressConfig {
     responsive: false,
     clockwise: true,
     semicircle: false,
-    rounded: false
+    rounded: false,
+    ifOnly:false
   };
 
   /** Configures the defaults. */

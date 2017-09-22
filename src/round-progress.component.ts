@@ -17,22 +17,29 @@ import {RoundProgressEase} from './round-progress.ease';
   selector: 'round-progress',
   template: `
     <svg xmlns="http://www.w3.org/2000/svg" [attr.viewBox]="_viewBox">
+      <defs>
+        <linearGradient  id="linear" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#FF9C00"/>
+            <stop offset="100%" stop-color="#FFC900"/>
+        </linearGradient>
+      </defs>
       <circle
         fill="none"
         [attr.cx]="radius"
         [attr.cy]="radius"
         [attr.r]="radius - stroke / 2"
-        [style.stroke]="resolveColor(background)"
+        [style.stroke]="#101010"
         [style.stroke-width]="stroke"/>
 
       <path
         #path
         fill="none"
         [style.stroke-width]="stroke"
-        [style.stroke]="resolveColor(color)"
+        [style.stroke]= "ifOnly ? 'url(#linear)' : '#5F5F5F'"
         [style.stroke-linecap]="rounded ? 'round' : ''"
         [attr.transform]="getPathTransform()"/>
     </svg>
+
   `,
   host: {
     'role': 'progressbar',
