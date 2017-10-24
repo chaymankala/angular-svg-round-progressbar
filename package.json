@@ -5,7 +5,7 @@
   "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git://github.com/crisbeto/angular-svg-round-progressbar.git"
+    "url": "git://github.com/chaymankala/angular-svg-round-progressbar.git"
   },
   "keywords": [
     "angular",
@@ -17,9 +17,9 @@
   "author": "crisbeto",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/crisbeto/angular-svg-round-progressbar/issues"
+    "url": "https://github.com/chaymankala/angular-svg-round-progressbar/issues"
   },
-  "homepage": "https://github.com/crisbeto/angular-svg-round-progressbar",
+  "homepage": "https://github.com/chaymankala/angular-svg-round-progressbar",
   "files": [
     "dist/**/*"
   ],
