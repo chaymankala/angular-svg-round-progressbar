@@ -13,6 +13,8 @@ export interface RoundProgressDefaults {
   semicircle?: boolean;
   rounded?: boolean;
   ifOnly?:boolean;
+  disableGradient?:boolean;
+  on?:any;
 }
 
 @Injectable()
@@ -29,7 +31,9 @@ export class RoundProgressConfig {
     clockwise: true,
     semicircle: false,
     rounded: false,
-    ifOnly:false
+    ifOnly:false,
+    disableGradient: false,
+    on:false
   };
 
   /** Configures the defaults. */

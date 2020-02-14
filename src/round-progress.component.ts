@@ -35,7 +35,7 @@ import {RoundProgressEase} from './round-progress.ease';
         #path
         fill="none"
         [style.stroke-width]="stroke"
-        [style.stroke]= "ifOnly ? '#FFC900' : '#5F5F5F'"
+        [style.stroke]= "on ? disableGradient?color:'url(#linear)' : '#5F5F5F'"
         [style.stroke-linecap]="rounded ? 'round' : ''"
         [attr.transform]="getPathTransform()"/>
     </svg>
