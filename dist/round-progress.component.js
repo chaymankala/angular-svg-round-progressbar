@@ -35,6 +35,7 @@ var RoundProgressComponent = (function () {
         this.grad = this._defaults.get('grad');
         this.grad2 = this._defaults.get('grad2');
         this.on = this._defaults.get('on');
+        this.disableGradient = this._defaults.get('disableGradient');
     }
     /** Animates a change in the current value. */
     RoundProgressComponent.prototype._animateChange = function (from, to) {
@@ -202,6 +203,10 @@ var RoundProgressComponent = (function () {
     __decorate([
         core_1.Input(), 
         __metadata('design:type', String)
+    ], RoundProgressComponent.prototype, "disableGradient", void 0);
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
     ], RoundProgressComponent.prototype, "grad2", void 0);
     __decorate([
         core_1.Input(), 
@@ -215,7 +220,7 @@ var RoundProgressComponent = (function () {
     RoundProgressComponent = __decorate([
         core_1.Component({
             selector: 'round-progress',
-            template: "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" [attr.viewBox]=\"_viewBox\">\n <defs>\n<linearGradient  id=\"linear\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"0%\">\n<stop offset=\"0%\" stop-color=\"#FF9C00\"/> <stop offset=\"100%\" stop-color=\" #FFC900\"/></linearGradient></defs>     <circle\n        fill=\"none\"\n        [attr.cx]=\"radius\"\n        [attr.cy]=\"radius\"\n        [attr.r]=\"radius - stroke / 2\"\n        stroke=\"#101010\"\n        [style.stroke-width]=\"stroke\"/>\n\n      <path\n        #path\n        fill=\"none\"\n        [style.stroke-width]=\"stroke\"\n        [style.stroke]=\"on ? 'url(#linear)' : '#5F5F5F'\"\n        [style.stroke-linecap]=\"rounded ? 'round' : ''\"\n        [attr.transform]=\"getPathTransform()\"/>\n    </svg>\n  ",
+            template: "\n    <svg xmlns=\"http://www.w3.org/2000/svg\" [attr.viewBox]=\"_viewBox\">\n <defs>\n<linearGradient  id=\"linear\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"0%\">\n<stop offset=\"0%\" stop-color=\"#FF9C00\"/> <stop offset=\"100%\" stop-color=\" #FFC900\"/></linearGradient></defs>     <circle\n        fill=\"none\"\n        [attr.cx]=\"radius\"\n        [attr.cy]=\"radius\"\n        [attr.r]=\"radius - stroke / 2\"\n        stroke=\"#101010\"\n        [style.stroke-width]=\"stroke\"/>\n\n      <path\n        #path\n        fill=\"none\"\n        [style.stroke-width]=\"stroke\"\n        [style.stroke]=\"on ? disableGradient?color:'url(#linear)' : '#5F5F5F'\"\n        [style.stroke-linecap]=\"rounded ? 'round' : ''\"\n        [attr.transform]=\"getPathTransform()\"/>\n    </svg>\n  ",
             host: {
                 'role': 'progressbar',
                 '[attr.aria-valuemin]': 'current',
