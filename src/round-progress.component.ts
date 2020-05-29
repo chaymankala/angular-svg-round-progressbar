@@ -6,7 +6,7 @@ import {
   NgZone,
   EventEmitter,
   ViewChild,
-  Renderer,
+  Renderer2,
 } from '@angular/core';
 
 import {RoundProgressService} from './round-progress.service';
@@ -77,7 +77,7 @@ export class RoundProgressComponent implements OnChanges {
     private _easing: RoundProgressEase,
     private _defaults: RoundProgressConfig,
     private _ngZone: NgZone,
-    private _renderer: Renderer
+    private _renderer: Renderer2
   ) {}
 
   /** Animates a change in the current value. */
@@ -123,7 +123,7 @@ export class RoundProgressComponent implements OnChanges {
   /** Sets the path dimensions. */
   private _setPath(value: number): void {
     if (this._path) {
-      this._renderer.setElementAttribute(this._path.nativeElement, 'd', this._service.getArc(value,
+      this._renderer.setAttribute(this._path.nativeElement, 'd', this._service.getArc(value,
           this.max, this.radius - this.stroke / 2, this.radius, this.semicircle));
     }
   }
