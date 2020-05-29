@@ -72,7 +72,7 @@
                                 {
                                     "__symbolic": "reference",
                                     "module": "@angular/core",
-                                    "name": "Renderer"
+                                    "name": "Renderer2"
                                 }
                             ]
                         }
@@ -418,7 +418,7 @@
                                 {
                                     "__symbolic": "reference",
                                     "module": "@angular/core",
-                                    "name": "Renderer"
+                                    "name": "Renderer2"
                                 }
                             ]
                         }

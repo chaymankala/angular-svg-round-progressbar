@@ -71,7 +71,7 @@ var RoundProgressComponent = (function () {
     /** Sets the path dimensions. */
     RoundProgressComponent.prototype._setPath = function (value) {
         if (this._path) {
-            this._renderer.setElementAttribute(this._path.nativeElement, 'd', this._service.getArc(value, this.max, this.radius - this.stroke / 2, this.radius, this.semicircle));
+            this._renderer.setAttribute(this._path.nativeElement, 'd', this._service.getArc(value, this.max, this.radius - this.stroke / 2, this.radius, this.semicircle));
         }
     };
     /** Clamps a value between the maximum and 0. */
@@ -219,7 +219,7 @@ var RoundProgressComponent = (function () {
                 ":host.responsive > svg {\n      position: absolute;\n      width: 100%;\n      height: 100%;\n      top: 0;\n      left: 0;\n    }"
             ]
         }), 
-        __metadata('design:paramtypes', [round_progress_service_1.RoundProgressService, round_progress_ease_1.RoundProgressEase, round_progress_config_1.RoundProgressConfig, core_1.NgZone, core_1.Renderer])
+        __metadata('design:paramtypes', [round_progress_service_1.RoundProgressService, round_progress_ease_1.RoundProgressEase, round_progress_config_1.RoundProgressConfig, core_1.NgZone, core_1.Renderer2])
     ], RoundProgressComponent);
     return RoundProgressComponent;
 }());
